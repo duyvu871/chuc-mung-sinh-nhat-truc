@@ -1,0 +1,177 @@
+:root {
+    --active: #fff;
+    --background: rgba(255, 255, 255, 0.1);
+    --progress-duration: 4000;
+    --progress-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.loading-indicator {
+    -ms-flex: 0 1 320px;
+    flex: 0 1 320px;
+    height: 1px;
+    position: relative;
+    background-color: var(--background);
+}
+.loading-indicator span {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: var(--active);
+    animation: loading calc(var(--progress-duration) * 1ms) var(--progress-easing) infinite;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: scaleX(0);
+        transform-origin: left;
+    }
+    49% {
+        -webkit-transform: scaleX(1);
+        transform-origin: left;
+    }
+    51% {
+        -webkit-transform: scaleX(1);
+        transform-origin: right;
+    }
+    100% {
+        -webkit-transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+@keyframes loading {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    49% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    51% {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+.progress {
+    -ms-flex: 0 1 50px;
+    flex: 0 1 50px;
+    padding-right: 10px;
+    text-align: right;
+    color: var(--active);
+}
+body.completed .loading-layout {
+    /*display: none;*/
+    animation: fadeOutBackground 4000ms cubic-bezier(1, 0.19, 0.84, 0.97) forwards ;
+    /*animation-duration: 4s;*/
+}
+body.completed .progress,
+body.completed .loading-indicator {
+    animation: fadeOut var(--progress-easing) forwards;
+    animation-iteration-count: 1;
+}
+body.completed .progress {
+    animation-duration: calc(var(--progress-duration) * 0.75ms);
+    animation-delay: calc(var(--progress-duration) * 0.375ms);
+}
+body.completed .loading-indicator {
+    animation-duration: calc(var(--progress-duration) * 0.625ms);
+    animation-delay: calc(var(--progress-duration) * 0.5ms);
+}
+@-webkit-keyframes fadeOut {
+    0% {
+        -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(10px);
+        -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}
+@keyframes fadeOut {
+    0% {
+        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(10px);
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}
+
+@keyframes fadeOutBackground {
+    0% {
+        opacity: 1;
+        /*transform: translateX(0);*/
+    }
+    25% {
+        opacity: 1;
+        /*transform: translateX(0.5rem);*/
+    }
+    50% {
+        opacity: 1;
+        /*transform: translateX(1rem);*/
+    }
+    55% {
+        opacity: 0.95;
+        /*transform: translateX(1rem);*/
+    }
+    60% {
+        opacity: 0.9;
+        /*transform: translateX(1.125rem);*/
+    }
+    65% {
+        opacity: 0.8;
+        /*transform: translateX(1.25rem);*/
+    }
+    70% {
+        opacity: 0.7;
+        /*transform: translateX(1.25rem);*/
+    }
+    75% {
+        opacity: 0.6;
+        /*transform: translateX(1.375rem);*/
+    }
+    80% {
+        opacity: 0.5;
+        /*transform: translateX(1.375rem);*/
+    }
+    85% {
+        opacity: 0.4;
+        /*transform: translateX(1.5rem);*/
+    }
+    90% {
+        opacity: 0.3;
+        /*transform: translateX(1.5rem);*/
+    }
+    95% {
+        opacity: 0.2;
+        /*transform: translateX(1.5rem);*/
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        /*transform: translateX(1.5rem);*/
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    /*font-family: "Roboto", sans-serif;*/
+    /*width: 100%;*/
+    /*margin: 0;*/
+    /*padding: 80px 10px;*/
+    /*min-height: 100vh;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*box-sizing: border-box;*/
+    /*background: #02001c;*/
+    /*overflow: hidden;*/
+}

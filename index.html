@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="Chúc Mừng Sinh Nhật Trúc">
+    <meta name="keywords" content="Chúc Mừng Sinh Nhật Trúc">
+    <meta name="author" content="Du">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>Chúc Mừng Sinh Nhật Trúc </title>
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/loading.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/50ecca59bf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+            rel="stylesheet"
+    />
+    <script src="./data.js"></script>
+    <script src="./helper.js"></script>
+    <style>
+        .loading-layout {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-layout">
+        <small class="progress"><span data-count-to="100">00</span><span>%</span></small>
+        <div class="loading-indicator">
+            <span></span>
+        </div>
+    </div>
+    <main class="main slide-area">
+        <div class="box-animation">
+            <div class="present">
+                <div class="name">
+                    <svg viewBox="0 0 300 330" xmlns="http://www.w3.org/2000/svg">
+                        <foreignobject style="width:100%; height:100%" width="100%" height="100%">
+                            <body xmlns="http://www.w3.org/1999/xhtml" class="letter-font">
+
+                                <div class="letter-text">
+                                    <div class="name-text mt-16 w-full text-center">
+                                        <h1 class="font-bold text-[25px]">Chúc mừng sinh nhật Thanh Trúc Bám Bám 🎂🎉🎈</h1>
+                                    </div>
+                                    <p class="mt-4 text-gray-800">
+                                        Trúc hãy nhấn vô mũi tên bên dưới để chuyển hướng sang các tấm thẻ tiếp theo nha Hêhee
+                                    </p>
+                                    <p class="text-gray-800 mt-16 text-[10px]">
+                                        Ựa nhớ Trúp quá à :(((((
+                                    </p>
+                                </div>
+                            </body>
+                        </foreignobject>
+                    </svg>
+                </div>
+
+                <div class="rotate-container">
+                    <div class="bottom"></div>
+                    <div class="front"></div>
+                    <div class="left"></div>
+                    <div class="back"></div>
+                    <div class="right"></div>
+
+                    <div class="lid">
+                        <div class="lid-top"></div>
+                        <div class="lid-front"></div>
+                        <div class="lid-left"></div>
+                        <div class="lid-back"></div>
+                        <div class="lid-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="director">
+            </div>
+        </div>
+    </main>
+    <div class="image-modal">
+
+    </div>
+    <script>
+        let access_clicked_box = false;
+        let loaded_images = 0;
+    </script>
+    <script src="./loading.js"></script>
+    <script src="./box-animation.js" defer></script>
+    <script src="./main.js" defer></script>
+</body>
+</html>
