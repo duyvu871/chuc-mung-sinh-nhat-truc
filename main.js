@@ -1,9 +1,6 @@
-
 //@statics-element
-const slideArea = $_V('.slide-area');
-const ModalElement = $_V('.image-modal');
-
-// const slide = $_V('.slide');
+const slideArea = document.querySelector('.slide-area');
+const ModalElement = document.querySelector('.image-modal');
 
 //@component
 const Component = {
@@ -74,7 +71,7 @@ const renderElement = {
 }
 
 //@action-setter
-const BoxAnimation = $_V('.box-animation');
+const BoxAnimation = document.querySelector('.box-animation');
 const BoxAnimationDirector = BoxAnimation.querySelector('.director');
 const BoxAnimationDirectElements = [Component.arrowRight].map(item => {
     const div1 = createVisualElement('<div class="flex justify-center items-center text-[20px] text-white w-14 h-14 cursor-pointer bg-[#cd00cdbf] rounded-full hover: "></div>');
@@ -85,6 +82,7 @@ const BoxAnimationDirectElements = [Component.arrowRight].map(item => {
     return div1;
 });
 BoxAnimationDirectElements[0].addEventListener('click', (e) => {
+    document.querySelector(".present").classList.remove('open');
     Slide.currentIndex++;
     Slide.slideTransform(Slide.currentIndex);
 });
@@ -126,7 +124,6 @@ ModalElement.addEventListener('click', (e) => {
         ModalElement.innerHTML = '';
     }, 300);
 });
-
 
 
 
