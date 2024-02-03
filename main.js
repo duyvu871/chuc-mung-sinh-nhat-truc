@@ -77,7 +77,7 @@ const Slide = {
                                 <div class="flex justify-center items-center w-fit">
                                     <img 
                                         src="${url}" 
-                                        class="max-w-[180px] max-h-[180px] h-fit object-contain cursor-pointer rounded-lg hover:shadow-lg transition duration-300 ease-in-out" 
+                                        class="max-w-[180px] max-h-[180px] h-fit object-contain cursor-pointer rounded-lg hover:shadow-lg hover:scale-[1.23] transition duration-300 ease-in-out" 
                                         alt="anh-truc"
                                         onclick="Slide.slideImagePreviews('${url}')"    
                                     >
@@ -147,14 +147,14 @@ slideData.forEach((item, index) => {
                 ${slideItem.outerHTML}
                 <div class="director">
                     <div 
-                        class="flex justify-center items-center text-[20px] text-white w-14 h-14 cursor-pointer bg-[#cd00cdbf] rounded-full hover: " 
+                        class="flex justify-center items-center text-[20px] text-white w-14 h-14 cursor-pointer bg-[#cd00cdbf] rounded-full hover:scale-[1.23] transition duration-300 ease-in-out hover: " 
                         slide-index="${index}"
                         onclick="Slide.slideTransform(${index})"
                         >
                         ${Component.arrowLeft.outerHTML}
                     </div>
                     <div 
-                        class="flex justify-center items-center text-[20px] text-white w-14 h-14 cursor-pointer bg-[#cd00cdbf] rounded-full hover: " 
+                        class="flex justify-center items-center text-[20px] text-white w-14 h-14 cursor-pointer bg-[#cd00cdbf] rounded-full hover:scale-[1.23] transition duration-300 ease-in-out hover:" 
                         slide-data="${index + 2}"
                         onclick="Slide.slideTransform(${index + 2})"
                         >
