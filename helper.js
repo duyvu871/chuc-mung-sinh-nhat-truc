@@ -9,7 +9,6 @@ const setLocalStorageItems = (key,items) => {
 const deleteLocalStorageItems = (key) => {
     localStorage.removeItem(key)
 }
-
 function chunkArray(arr, chunkSize) {
     const result = [];
     for (let i = 0; i < arr.length; i += chunkSize) {
