@@ -62,9 +62,11 @@ const Slide = {
     content: loi_nhan,
     currentDetailImage: '',
     slideTransform: (index = 0) => {
+        Slide.slideArea.children[Slide.currentIndex].classList.remove('active');
         if (index < 0 || index > Slide.slideArea.children.length - 1) return;
         Slide.currentIndex = index < 0 ? 0 : index > Slide.slideArea.children.length - 1 ? Slide.slideArea.children.length - 1 : index;
         Slide.slideArea.style.transform = `translateX(-${index * 100}%)`;
+        Slide.slideArea.children[Slide.currentIndex].classList.add('active');
         console.log("slide index: ", Slide.currentIndex);
     },
     slideItemContent: (image_urls = [''], content = loi_nhan[0]) => {
@@ -77,7 +79,7 @@ const Slide = {
                                 <div class="flex justify-center items-center w-fit">
                                     <img 
                                         src="${url}" 
-                                        class="max-w-[180px] max-h-[180px] h-fit object-contain cursor-pointer rounded-lg hover:shadow-lg hover:scale-[1.23] transition duration-300 ease-in-out" 
+                                        class="anh-truc max-w-[180px] max-h-[180px] h-fit object-contain cursor-pointer rounded-lg hover:shadow-lg hover:scale-[1.23] transition duration-300 ease-in-out" 
                                         alt="anh-truc"
                                         onclick="Slide.slideImagePreviews('${url}')"    
                                     >
@@ -96,7 +98,7 @@ const Slide = {
         setTimeout(() => {
             ModalElement.append(createVisualElement(`
                 <div class="slide-item">
-                    <img src="${image_url}" class="max-w-[500px] h-fit aspect-square object-contain" alt="anh-truc">
+                    <img src="${image_url}" class="max-w-[500px] h-fit aspect-square object-contain rounded-full" alt="anh-truc">
                 </div>
             `));
             ModalElement.classList.add('fade-in');
@@ -124,7 +126,7 @@ const renderElement = {
 const BoxAnimation = document.querySelector('.box-animation');
 const BoxAnimationDirector = BoxAnimation.querySelector('.director');
 const BoxAnimationDirectElements = [Component.arrowRight].map(item => {
-    const div1 = createVisualElement('<div class="flex justify-center items-center text-[20px] text-white w-14 h-14 cursor-pointer bg-[#cd00cdbf] rounded-full hover: "></div>');
+    const div1 = createVisualElement('<div class="flex justify-center items-center text-[20px] text-white w-14 h-14 cursor-pointer bg-[#cd00cdbf] rounded-full hover:scale-[1.23] transition duration-300 ease-in-out hover:"></div>');
     div1.appendChild(item);
     renderElement.render_element(BoxAnimationDirector)(
         div1
