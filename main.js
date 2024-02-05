@@ -79,7 +79,7 @@ const Slide = {
                                 <div class="flex justify-center items-center w-fit">
                                     <img 
                                         src="${url}" 
-                                        class="anh-truc max-w-[180px] max-h-[180px] h-fit object-contain cursor-pointer rounded-lg hover:shadow-lg hover:scale-[1.23] transition duration-300 ease-in-out" 
+                                        class="anh-truc max-w-[180px] max-h-[180px] h-fit object-contain cursor-pointer rounded-lg hover:shadow-lg hover:scale-[1.23] z-[100] hover:z-[123] transition duration-300 ease-in-out" 
                                         alt="anh-truc"
                                         onclick="Slide.slideImagePreviews('${url}')"    
                                     >
@@ -98,7 +98,7 @@ const Slide = {
         setTimeout(() => {
             ModalElement.append(createVisualElement(`
                 <div class="slide-item">
-                    <img src="${image_url}" class="max-w-[500px] h-fit aspect-square object-contain rounded-full" alt="anh-truc">
+                    <img src="${image_url}" class="max-w-[500px] h-fit aspect-square object-contain rounded-lg " alt="anh-truc">
                 </div>
             `));
             ModalElement.classList.add('fade-in');

@@ -54,6 +54,7 @@ body {
     top: -100%;
     opacity: 0;
     animation: fadeInDown 4s forwards;
+    /*z-index: 999;*/
 }
 
 .fade-in {
